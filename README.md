@@ -46,3 +46,8 @@ You can make builds for specific platforms (or multiple platforms) by using the 
 ```bash
 npm run dist -- -mwl
 ```
+
+Build portable for Windows 32-bit:
+```bash
+npm run dist -- -w --ia32
+```
