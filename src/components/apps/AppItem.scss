@@ -1,0 +1,27 @@
+.app {
+}
+.app a {
+  display: block;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: #039EE6;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 250ms ease-in-out;
+}
+.app a:hover {
+  background-color: #05abf2;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.32);
+  transform: translate(0, -3px);
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+.app--disabled a {
+  background-color: #cfdee6;
+  color: #666;
+}
+.app--disabled a:hover {
+  background-color: #cfdee6;
+  box-shadow: none;
+  transform: none;
+}
