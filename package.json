@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:Robinfr/electron-react-typescript.git"
+    "url": "git+ssh://git@github.com:martinhartwig/electron-react-typescript-test.git"
   },
   "author": {
     "name": "Your name",
@@ -50,9 +50,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Robinfr/electron-react-typescript/issues"
+    "url": "https://github.com/martinhartwig/electron-react-typescript-test/issues"
   },
-  "homepage": "https://github.com/Robinfr/electron-react-typescript",
+  "homepage": "https://github.com/martinhartwig/electron-react-typescript-test",
   "devDependencies": {
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/react": "^16.8.13",
