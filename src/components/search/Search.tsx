@@ -34,7 +34,7 @@ export class Search extends React.Component<ISearchProps, ISearchState> {
 		let searchResult = this.getSearchResult();
 		return (
 			<div className="search">
-				<input className="search-input" type="text" onKeyUp={this.handleKeyUp.bind(this)}/>
+				<input className="search-input" type="text" onKeyUp={this.handleKeyUp.bind(this)} placeholder="Suchen …" />
 				{searchResult.length > 0 ?
 					<ul className="search-results">
 						{searchResult.map((res: IApplicationsItem, idx: number) => (
