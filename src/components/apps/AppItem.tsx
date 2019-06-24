@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { remote } from 'electron';
 
 import './AppItem.scss';
 
@@ -13,11 +14,19 @@ interface IAppItemProps {
 }
 
 export class AppItem extends React.Component<IAppItemProps, {}> {
+  private _menu: Electron.Menu = new remote.Menu();
+
+  componentWillMount() {
+    this._menu = new remote.Menu();
+    this._menu.append(new remote.MenuItem({ label: 'Starten', click: () => null }));
+    this._menu.append(new remote.MenuItem({ label: 'Erneut starten', click: () => null }));
+  }
+
   render() {
     const className = 'app ' + (this.props.isDisabled ? 'app--disabled' : '');
     return (
       <li className={className}>
-        <a href="javascript:void(0);" onClick={this.handleClick.bind(this)} onDoubleClick={this.handleDoubleClick.bind(this)}>{this.props.name}</a>
+        <a href="javascript:void(0);" onClick={this.handleClick.bind(this)} onDoubleClick={this.handleDoubleClick.bind(this)} onContextMenu={this.handleContextMenu.bind(this)}>{this.props.name}</a>
       </li>
     );
   }
@@ -28,6 +37,11 @@ export class AppItem extends React.Component<IAppItemProps, {}> {
 
   doDoubleClickAction() {
     window.alert(`Starting app '${this.props.name}' ...`);
+  }
+
+  handleContextMenu(event: React.MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    this._menu.popup({ window: remote.getCurrentWindow() });
   }
 
   handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
